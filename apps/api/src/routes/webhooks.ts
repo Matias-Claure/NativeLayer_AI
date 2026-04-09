@@ -28,7 +28,7 @@ const webhooksRoute: FastifyPluginAsync = async (fastify) => {
     'application/json',
     { parseAs: 'string' },
     (req, body: string, done) => {
-      (req as Record<string, unknown>).rawBody = body;
+      (req as unknown as Record<string, unknown>).rawBody = body;
       try {
         done(null, JSON.parse(body));
       } catch (e: unknown) {
@@ -42,7 +42,7 @@ const webhooksRoute: FastifyPluginAsync = async (fastify) => {
   fastify.post('/webhooks', async (request, reply) => {
     const signature = request.headers['x-shopify-hmac-sha256'] as string | undefined;
     const topic = request.headers['x-shopify-topic'] as string | undefined;
-    const rawBody = (request as Record<string, unknown>).rawBody as string | undefined;
+    const rawBody = (request as unknown as Record<string, unknown>).rawBody as string | undefined;
     const secret = process.env['SHOPIFY_API_SECRET']!;
 
     if (!signature) {
