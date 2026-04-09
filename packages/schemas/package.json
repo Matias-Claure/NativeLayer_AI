@@ -1,0 +1,28 @@
+{
+  "name": "@nativelayer/schemas",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit",
+    "generate:openapi": "node --experimental-vm-modules dist/generate-openapi.js"
+  },
+  "dependencies": {
+    "zod": "^3.24.1",
+    "@asteasolutions/zod-to-openapi": "^7.3.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "@types/node": "^22.10.5"
+  }
+}

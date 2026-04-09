@@ -1,0 +1,25 @@
+{
+  "name": "nativelayer",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "db:migrate": "turbo run db:migrate --filter=@nativelayer/api",
+    "db:generate": "turbo run db:generate --filter=@nativelayer/api",
+    "generate:openapi": "turbo run generate:openapi --filter=@nativelayer/schemas"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.2",
+    "prettier": "^3.4.2",
+    "@types/node": "^22.10.5"
+  },
+  "packageManager": "npm@11.6.2",
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

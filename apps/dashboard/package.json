@@ -1,0 +1,31 @@
+{
+  "name": "@nativelayer/dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@nativelayer/schemas": "*",
+    "@nativelayer/security": "*",
+    "@nativelayer/observability": "*",
+    "drizzle-orm": "^0.41.0",
+    "iron-session": "^8.0.4",
+    "next": "^15.2.4",
+    "pg": "^8.13.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "@types/pg": "^8.11.10",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "typescript": "^5.7.2"
+  }
+}
