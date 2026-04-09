@@ -1,4 +1,4 @@
-import { getIronSession, type IronSessionOptions } from 'iron-session';
+import { getIronSession, type SessionOptions } from 'iron-session';
 import { cookies } from 'next/headers';
 
 export interface SessionData {
@@ -7,7 +7,7 @@ export interface SessionData {
   email: string;
 }
 
-function getSessionOptions(): IronSessionOptions {
+function getSessionOptions(): SessionOptions {
   const secret = process.env['SESSION_SECRET'];
   if (!secret || secret.length < 32) {
     throw new Error('SESSION_SECRET must be at least 32 characters long.');
